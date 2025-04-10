@@ -53,19 +53,8 @@ ax.set_title("3D PCA Scatter Plot of GLCM Features")
 ax.set_xlabel("PC1")
 ax.set_ylabel("PC2")
 ax.set_zlabel("PC3")
-# legend = ax.legend(*scatter.legend_elements(), title="Class")
-# Update legend labels
-legend_labels = {0: 'Good', 1: 'Reject'}
-handles, labels = scatter.legend_elements()
-
-# Clean labels to extract numeric values
-cleaned_labels = [int(label.replace('$\\mathdefault{', '').replace('}$', '')) for label in labels]
-mapped_labels = [legend_labels[label] for label in cleaned_labels]
-
-# Create updated legend
-legend = ax.legend(handles, mapped_labels, title="Class")
+legend = ax.legend(*scatter.legend_elements(), title="Class")
 ax.add_artist(legend)
-
 plt.tight_layout()
 plt.show()
 
